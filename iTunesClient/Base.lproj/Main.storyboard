@@ -77,7 +77,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ouD-hZ-Fiw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="887" y="130"/>
+            <point key="canvasLocation" x="879" y="130"/>
         </scene>
         <!--Album List Controller-->
         <scene sceneID="qOe-Po-UFL">
@@ -151,7 +151,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvH-UE-gQy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1680" y="130"/>
+            <point key="canvasLocation" x="1682" y="130"/>
         </scene>
         <!--Album Detail Controller-->
         <scene sceneID="4hi-hF-B2i">
@@ -205,7 +205,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="songCell" id="Ysv-SG-E7r">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="songCell" id="Ysv-SG-E7r" customClass="SongCell" customModule="iTunesClient" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="155.5" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ysv-SG-E7r" id="Cfp-5n-USB">
@@ -232,6 +232,10 @@
                                         <constraint firstItem="OQ1-AE-uUf" firstAttribute="centerY" secondItem="Cfp-5n-USB" secondAttribute="centerY" id="kxv-Q8-Pfy"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="songDurationLabel" destination="kIj-S9-jzr" id="vyH-zm-Jot"/>
+                                    <outlet property="songNameLabel" destination="OQ1-AE-uUf" id="lae-p5-244"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -248,7 +252,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3pc-6b-Ggs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="886.875" y="882.5"/>
+            <point key="canvasLocation" x="879" y="968"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ugs-t3-wRG">
@@ -266,7 +270,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DWk-4s-h8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="54" y="883"/>
+            <point key="canvasLocation" x="54" y="968"/>
         </scene>
     </scenes>
     <resources>
