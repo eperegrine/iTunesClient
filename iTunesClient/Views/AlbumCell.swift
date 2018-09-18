@@ -28,5 +28,11 @@ class AlbumCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func configure(with viewModel: AlbumCellViewModel) {
+        albumTitleLabel.text = viewModel.tile
+        genreLabel.text = viewModel.genre
+        releaseDateLabel.text = viewModel.releaseDate
+    }
 
 }

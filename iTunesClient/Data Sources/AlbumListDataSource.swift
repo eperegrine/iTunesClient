@@ -30,6 +30,10 @@ class AlbumListDataSource: NSObject, UITableViewDataSource {
         guard let albumCell = tableView.dequeueReusableCell(withIdentifier: AlbumCell.reuseIdentifier, for: indexPath) as? AlbumCell else {
             fatalError("Failed to convert cell to AlbumCell")
         }
+        let album = albums[indexPath.row]
+        let albumViewModel = AlbumCellViewModel(album: album)
+        albumCell.configure(with: albumViewModel)
+        albumCell.accessoryType = .disclosureIndicator
         
         return albumCell
     }

@@ -31,8 +31,6 @@ class SearchResultsController: UITableViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
-    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -43,6 +41,20 @@ class SearchResultsController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 0
+    }
+    
+    //MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showAlbums" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let artist = dataSource.artist(at: indexPath)
+                artist.albums = Stub.albums
+                guard let albumListController = segue.destination as? AlbumListController else {
+                    fatalError("showAlbums segues did not go to AlbuimListController")
+                }
+                albumListController.artist = artist
+            }
+        }
     }
 }
 
