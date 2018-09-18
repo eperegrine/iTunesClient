@@ -153,10 +153,10 @@
             </objects>
             <point key="canvasLocation" x="1680" y="130"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Album Detail Controller-->
         <scene sceneID="4hi-hF-B2i">
             <objects>
-                <tableViewController id="bT0-Am-ep8" sceneMemberID="viewController">
+                <tableViewController id="bT0-Am-ep8" customClass="AlbumDetailController" customModule="iTunesClient" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="JiF-3n-Bg7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -239,6 +239,12 @@
                             <outlet property="delegate" destination="bT0-Am-ep8" id="noF-TK-cHv"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="albumDateLabel" destination="ZYE-lj-JXg" id="LLH-fa-9EB"/>
+                        <outlet property="albumGenreLabel" destination="kgu-U3-q0M" id="jzw-e0-CRE"/>
+                        <outlet property="albumTitleLabel" destination="Ugo-Tl-uBf" id="skS-4H-88R"/>
+                        <outlet property="artworkView" destination="2FJ-DS-Pmg" id="z3S-kr-VBT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3pc-6b-Ggs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
