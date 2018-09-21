@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let endpoint = ItunesAPI.search(term: "#taylor swift", media: .music)
+        print(endpoint.request)
     }
 
     override func didReceiveMemoryWarning() {
