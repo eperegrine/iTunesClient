@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let endpoint = ItunesAPI.search(term: "#taylor swift", media: .music)
+        let endpoint = ItunesAPI.search(term: "#taylor swift", media: .music(entity: MusicEntity.musicArtist))
         print(endpoint.request)
     }
 
