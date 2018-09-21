@@ -14,8 +14,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let endpoint = ItunesAPI.search(term: "#taylor swift", media: .music(entity: MusicEntity.musicArtist))
-        print(endpoint.request)
+        let artistMedia = ItunesMedia.music(entity: MusicEntity.musicArtist, attribute: MusicAttribute.artistTerm)
+        let searchEndpoint = ItunesAPI.search(term: "taylor swift", media: artistMedia)
+        
+        let lookupEndpoint = ItunesAPI.lookup(id: 159260351, entity: MusicEntity.album)
+        
+        print ("Search: ", searchEndpoint.request)
+        print("***********************************")
+        print("Lookup: ", lookupEndpoint.request)
     }
 
     override func didReceiveMemoryWarning() {

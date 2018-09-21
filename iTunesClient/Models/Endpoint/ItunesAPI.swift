@@ -10,6 +10,7 @@ import Foundation
 
 enum ItunesAPI {
     case search(term: String, media: ItunesMedia?)
+    case lookup(id: Int, entity: ItunesEntity?)
 }
 
 extension ItunesAPI: Endpoint {
@@ -21,6 +22,8 @@ extension ItunesAPI: Endpoint {
         switch self {
         case .search:
             return "/search"
+        case .lookup:
+            return "/lookup"
         }
     }
     
@@ -39,9 +42,18 @@ extension ItunesAPI: Endpoint {
                 if let eqi = media.entityQueryItem {
                     result.append(eqi)
                 }
+                
+                if let attributeQueryItem = media.attributeQueryItem {
+                    result.append(attributeQueryItem)
+                }
             }
             
             return result
+        case.lookup(let id, let entity):
+            return [
+                URLQueryItem(name: "id", value: id.description),
+                URLQueryItem(name: "entity", value: entity?.entityName)
+            ]
         }
     }
 }
